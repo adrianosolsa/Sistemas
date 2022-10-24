@@ -7,10 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <marquee>
-        <?php
-        echo "adriano de sousa alves";
-    ?></marquee>
+
 
 </body>
 </html>
