@@ -34,4 +34,4 @@ Route::get('/', function () {
     return view('site.home');
 });
 
-Route::get('/login','LoginController@index')->name('login');
+Route::get('/login','LoginController@index')->name('site.login');
