@@ -34,4 +34,6 @@ Route::get('/', function () {
     return view('site.home');
 });
 
-Route::get('/login','LoginController@index')->name('site.login');
+
+Route::get('/login',[\App\Http\Controllers\LoginController::class,'index'])->name('site.login');
+Route::post('/login',[\App\Http\Controllers\LoginController::class,'autenticar'])->name('site.login');
