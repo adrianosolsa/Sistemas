@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,3 +25,13 @@ Route::get('/contato', function () {
 Route::get('/user', function () {
     return view('users');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+*/
+Route::get('/', function () {
+    return view('site.home');
+});
+
+Route::get('/login','LoginController@index')->name('login');
