@@ -42,8 +42,8 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                        <a class="logo" href="/">
+                            <img src="images/icon/logoTeccol.png" alt="Teccol Engenharia" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -58,10 +58,10 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Cadastros</a>
+                                <i class="fa fa-pencil-square-o"></i>Cadastros</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="index.html">Dashboard 1</a>
+                                    <a href="cadastroproduto">Produtos</a>
                                 </li>
                                 <li>
                                     <a href="index2.html">Dashboard 2</a>
@@ -157,37 +157,36 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar2">
             <div class="logo">
-                <a href="#">
+                <a href="/">
                     <img src="images/icon/logoTeccol.png" alt="Teccol Engenharia" />
                 </a>
             </div>
             <div class="menu-sidebar2__content js-scrollbar1">
-            
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Cadastros
+                                <i class="fa fa-pencil-square-o"></i>Cadastros
                                 <span class="arrow">
                                     <i class="fas fa-angle-down"></i>
                                 </span>
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.html">
-                                        <i class="fas fa-tachometer-alt"></i>Produtos</a>
+                                    <a href="cadastroproduto">
+                                        <i class="fa fa-pencil-square-o"></i>Produtos</a>
                                 </li>
                                 <li>
                                     <a href="index2.html">
-                                        <i class="fas fa-tachometer-alt"></i>Obras</a>
+                                        <i class="fa fa-pencil-square-o"></i>Obras</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">
-                                        <i class="fas fa-tachometer-alt"></i>Unidade de Medidas</a>
+                                        <i class="fa fa-pencil-square-o"></i>Unidade de Medidas</a>
                                 </li>
                                 <li>
                                     <a href="index4.html">
-                                        <i class="fas fa-tachometer-alt"></i>Fornecedores</a>
+                                        <i class="fa fa-pencil-square-o"></i>Fornecedores</a>
                                 </li>
                             </ul>
                         </li>
@@ -315,11 +314,7 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
+                            <form class="form-header" action="" method="POST">                        
                             </form>
                             <div class="header-button">
                                 <div class="noti-wrap">
@@ -484,9 +479,11 @@
             </header>
             <!-- HEADER DESKTOP-->
             <div class="main-content">
-
-                @yield('conteudo')
-
+                <div class="section__content section__content--p25">
+                    <div class="container-fluid">
+                        @yield('conteudo')
+                    </div>
+                </div>
             </div>
 
 
