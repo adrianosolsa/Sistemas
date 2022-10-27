@@ -16,11 +16,13 @@
                                 @csrf
                                 <div class="form-group">
                                     <label>E-mail</label>
-                                    <input class="au-input au-input--full" type="text" name="usuario" placeholder="Usuario">
+                                    <input class="au-input au-input--full" type="text" name="usuario" value="{{ old('usuario') }}" placeholder="E-mail">
+                                    {{ $errors->has('usuario') ? $errors->first('usuario') : '' }}
                                 </div>
                                 <div class="form-group">
                                     <label>Senha</label>
-                                    <input class="au-input au-input--full" type="password" name="senha" placeholder="Senha">
+                                    <input class="au-input au-input--full" type="password" name="senha" value="{{ old('senha') }}" placeholder="Senha">
+                                    {{ $errors->has('senha') ? $errors->first('senha') : '' }}
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
@@ -32,6 +34,7 @@
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Acessar</button>
                             </form>
+                            {{isset($erro) && $erro != '' ? $erro : '' }}
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\LogAcessoMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,15 +30,25 @@ Route::get('/user', function () {
 Route::get('/home', function () {
     return view('home');
 });
-*/
-Route::get('/', function () {
+
+
+
+Route::get('/home', function () {
     return view('site.home');
+})->name('site.home');
+/*/
+
+Route::middleware(LogAcessoMiddleware::class)
+    ->get( '/',[\App\Http\Controllers\HomeController::class, 'home'])
+    ->name('home');
+/*
+Route::prefix('/cadastros')->group(function(){
+    Route::get('/cadastroproduto', function(){ return view('site.cadastroproduto'); })->name('cadastros.cadastroproduto');
 });
-
-Route::get('/cadastroproduto', function () {
-    return view('site.cadastroproduto');
-});
+*/
 
 
-Route::get('/login',[\App\Http\Controllers\LoginController::class,'index'])->name('site.login');
+Route::get('/cadastroproduto', function(){ return view('site.cadastroproduto'); })->name('cadastros.cadastroproduto');
+
+Route::get('/login/{erro?}',[\App\Http\Controllers\LoginController::class,'index'])->name('site.login');
 Route::post('/login',[\App\Http\Controllers\LoginController::class,'autenticar'])->name('site.login');
