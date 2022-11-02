@@ -38,17 +38,24 @@ Route::get('/home', function () {
 })->name('site.home');
 /*/
 
+
+
+
+Route::get('/{erro?}',[\App\Http\Controllers\LoginController::class,'index'])->name('site.login');
+Route::post('/',[\App\Http\Controllers\LoginController::class,'autenticar'])->name('site.login');
+
+
 Route::middleware(LogAcessoMiddleware::class)
-    ->get( '/',[\App\Http\Controllers\HomeController::class, 'home'])
-    ->name('home');
-/*
-Route::prefix('/cadastros')->group(function(){
-    Route::get('/cadastroproduto', function(){ return view('site.cadastroproduto'); })->name('cadastros.cadastroproduto');
-});
-*/
+    ->get( '/home',[\App\Http\Controllers\HomeController::class, 'home'])
+    ->name('home')->name('site.home');
 
 
 Route::get('/cadastroproduto', function(){ return view('site.cadastroproduto'); })->name('cadastros.cadastroproduto');
 
-Route::get('/login/{erro?}',[\App\Http\Controllers\LoginController::class,'index'])->name('site.login');
-Route::post('/login',[\App\Http\Controllers\LoginController::class,'autenticar'])->name('site.login');
+
+/*
+Route::prefix('/app')->group(function(){
+    Route::get('/cadastroproduto', function(){ return view('site.cadastroproduto'); })->name('cadastros.cadastroproduto');
+
+});
+*/

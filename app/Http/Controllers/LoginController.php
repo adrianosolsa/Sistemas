@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Middleware\LogAcessoMiddleware;
 
 class LoginController extends Controller
 {
@@ -58,7 +57,8 @@ class LoginController extends Controller
             $_SESSION['nome'] = $usuario->name;
             $_SESSION['email'] = $usuario->email;
 
-            return redirect()->route('');
+            dd($_SESSION);
+            //return redirect()->route('');
         }else{
             return redirect()->route('site.login', ['erro' => 1]);
            
