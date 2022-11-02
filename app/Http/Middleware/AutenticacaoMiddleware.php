@@ -16,7 +16,7 @@ class AutenticacaoMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next, $metodo_autenticacao, $perfil){
-        echo $metodo_autenticacao.'<br>';
+        echo $metodo_autenticacao.' - '.$perfil.'<br>';
 
         if($metodo_autenticacao == 'padrao'){
             echo 'Verifia o usuario e senha no Banco de Dados'.'<br>';
