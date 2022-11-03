@@ -8,6 +8,10 @@ use App\Models\User;
 
 class HomeController extends Controller
 {
+    public function index() {
+        return view('site.home');
+    }
+
     public function home() {
         return view('site.home');
     }

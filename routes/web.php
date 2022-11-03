@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Middleware\AutenticacaoMiddleware;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\LogAcessoMiddleware;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,54 +15,36 @@ use App\Http\Middleware\LogAcessoMiddleware;
 |
 */
 
+
 /*
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('autenticacao')->prefix('/app')->group(function(){
+
+
+    Route::get( '/home',[\App\Http\Controllers\HomeController::class, 'index'])->name('site.home');
+    Route::get( '/cadastroproduto',[\App\Http\Controllers\CadastroProduto::class, 'index'])->name('site.cadastroproduto');
+    Route::get( '/cadastroobra',[\App\Http\Controllers\CadastroObra::class, 'index'])->name('site.cadastroobra');
+
 });
-
-Route::get('/contato', function () {
-    return view('contato');
-});
-
-Route::get('/user', function () {
-    return view('users');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-
-
-Route::get('/home', function () {
-    return view('site.home');
-})->name('site.home');
-/*/
-
-
-
-
-
-
+*/
+   
+ 
 Route::middleware('autenticacao')
-    ->get( '/home',[\App\Http\Controllers\HomeController::class, 'home'])
+    ->get( '/home',[\App\Http\Controllers\HomeController::class, 'index'])
     ->name('site.home');
 
+Route::middleware('autenticacao')
+    ->get( '/sair',[\App\Http\Controllers\LoginController::class, 'sair'])
+    ->name('site.sair');
+
 
 Route::middleware('autenticacao')
-    ->get('/cadastroproduto', function(){ return view('site.cadastroproduto'); })
+    ->get( '/cadastroproduto',[\App\Http\Controllers\CadastroProduto::class, 'index'])
     ->name('site.cadastroproduto');
 
 Route::middleware('autenticacao')
-    ->get('/cadastroobra', function(){ return view('site.cadastroobra'); })
+    ->get( '/cadastroobra',[\App\Http\Controllers\CadastroObra::class, 'index'])
     ->name('site.cadastroobra');
    
-/*    
-Route::middleware('autenticacao')->prefix('/app')->group(function(){
-    
-});
-*/
-
 
 
 Route::get('/{erro?}',[\App\Http\Controllers\LoginController::class,'index'])->name('site.login');

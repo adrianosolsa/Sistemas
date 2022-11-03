@@ -1,5 +1,7 @@
 @extends('site.layouts.basico')
 
+@section('titulo', 'Cadastro Produtos')
+
 @section('conteudo')
 
 <div class="page-wrapper">

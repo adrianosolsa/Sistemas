@@ -1,3 +1,5 @@
+<?php use Illuminate\Support\Facades\Route; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -466,8 +468,8 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                <a href="sair">
+                                                    <i class="zmdi zmdi-power"></i>Sair</a>
                                             </div>
                                         </div>
                                     </div>

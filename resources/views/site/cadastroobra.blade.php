@@ -1,11 +1,13 @@
 @extends('site.layouts.basico')
 
+@section('titulo', 'Cadastro Obras')
+
 @section('conteudo')
 
 <div class="page-wrapper">
     <div class="card">
         <div class="card-header">
-            <strong>Cadastro de Produto</strong>
+            <strong>Cadastro de Obras</strong>
         </div>
         <div class="card-body card-block">
             <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
