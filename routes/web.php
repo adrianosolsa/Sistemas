@@ -44,22 +44,25 @@ Route::get('/home', function () {
 
 
 
-Route::middleware('autenticacao:padrao')
+Route::middleware('autenticacao')
     ->get( '/home',[\App\Http\Controllers\HomeController::class, 'home'])
-    ->name('home')->name('site.home');
+    ->name('site.home');
 
 
 Route::middleware('autenticacao')
     ->get('/cadastroproduto', function(){ return view('site.cadastroproduto'); })
-    ->name('cadastros.cadastroproduto');
+    ->name('site.cadastroproduto');
 
-
-/*
-Route::prefix('/app')->group(function(){
-    Route::get('/cadastroproduto', function(){ return view('site.cadastroproduto'); })->name('cadastros.cadastroproduto');
-
+Route::middleware('autenticacao')
+    ->get('/cadastroobra', function(){ return view('site.cadastroobra'); })
+    ->name('site.cadastroobra');
+   
+/*    
+Route::middleware('autenticacao')->prefix('/app')->group(function(){
+    
 });
 */
+
 
 
 Route::get('/{erro?}',[\App\Http\Controllers\LoginController::class,'index'])->name('site.login');

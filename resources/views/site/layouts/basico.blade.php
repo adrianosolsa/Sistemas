@@ -177,7 +177,7 @@
                                         <i class="fa fa-pencil-square-o"></i>Produtos</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">
+                                    <a href="cadastroobra">
                                         <i class="fa fa-pencil-square-o"></i>Obras</a>
                                 </li>
                                 <li>
