@@ -13,14 +13,6 @@
             <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                 <div class="row form-group">
                     <div class="col col-md-3">
-                        <label class=" form-control-label">Static</label>
-                    </div>
-                    <div class="col-12 col-md-9">
-                        <p class="form-control-static">Username</p>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col col-md-3">
                         <label for="text-input" class=" form-control-label">Text Input</label>
                     </div>
                     <div class="col-12 col-md-9">
