@@ -1,6 +1,9 @@
 <?php
 
-
+use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\LoginController;
+use \App\Http\Controllers\CadastroProduto;
+use \App\Http\Controllers\CadastroObra;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,7 +17,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ 
+Route::middleware('autenticacao')
+    ->get( '/home',[HomeController::class,'index'])
+    ->name('site.home');
 
+Route::middleware('autenticacao')
+    ->get( '/sair',[LoginController::class, 'sair'])
+    ->name('site.sair');
+
+Route::middleware('autenticacao')
+    ->get( '/cadastroproduto',[CadastroProduto::class, 'index'])
+    ->name('site.cadastroproduto');
+
+Route::middleware('autenticacao')
+    ->get( '/cadastroobra',[CadastroObra::class, 'index'])
+    ->name('site.cadastroobra');
+   
+
+
+Route::get('/{erro?}',[LoginController::class,'index'])->name('site.login');
+Route::post('/',[LoginController::class,'autenticar'])->name('site.login');
 
 /*
 Route::middleware('autenticacao')->prefix('/app')->group(function(){
@@ -27,25 +50,3 @@ Route::middleware('autenticacao')->prefix('/app')->group(function(){
 });
 */
    
- 
-Route::middleware('autenticacao')
-    ->get( '/home',[\App\Http\Controllers\HomeController::class, 'index'])
-    ->name('site.home');
-
-Route::middleware('autenticacao')
-    ->get( '/sair',[\App\Http\Controllers\LoginController::class, 'sair'])
-    ->name('site.sair');
-
-
-Route::middleware('autenticacao')
-    ->get( '/cadastroproduto',[\App\Http\Controllers\CadastroProduto::class, 'index'])
-    ->name('site.cadastroproduto');
-
-Route::middleware('autenticacao')
-    ->get( '/cadastroobra',[\App\Http\Controllers\CadastroObra::class, 'index'])
-    ->name('site.cadastroobra');
-   
-
-
-Route::get('/{erro?}',[\App\Http\Controllers\LoginController::class,'index'])->name('site.login');
-Route::post('/',[\App\Http\Controllers\LoginController::class,'autenticar'])->name('site.login');
