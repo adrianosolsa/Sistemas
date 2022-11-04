@@ -66,10 +66,10 @@
                                     <a href="cadastroproduto">Produtos</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Dashboard 2</a>
+                                    <a href="cadastrofornecedor">Fornecedores</a>
                                 </li>
                                 <li>
-                                    <a href="index3.html">Dashboard 3</a>
+                                    <a href="cadastroobra">Obras</a>
                                 </li>
                                 <li>
                                     <a href="index4.html">Dashboard 4</a>
@@ -179,12 +179,12 @@
                                         <i class="fa fa-pencil-square-o"></i>Produtos</a>
                                 </li>
                                 <li>
-                                    <a href="cadastroobra">
-                                        <i class="fa fa-pencil-square-o"></i>Obras</a>
+                                    <a href="cadastrofornecedor">
+                                        <i class="fa fa-pencil-square-o"></i>Fornecedores</a>
                                 </li>
                                 <li>
-                                    <a href="index3.html">
-                                        <i class="fa fa-pencil-square-o"></i>Unidade de Medidas</a>
+                                    <a href="cadastroobra">
+                                        <i class="fa fa-pencil-square-o"></i>Obras</a>
                                 </li>
                                 <li>
                                     <a href="index4.html">

@@ -3,6 +3,7 @@
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\CadastroProduto;
+use \App\Http\Controllers\CadastroFornecedor;
 use \App\Http\Controllers\CadastroObra;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,10 @@ Route::middleware('autenticacao')
 Route::middleware('autenticacao')
     ->get( '/cadastroproduto',[CadastroProduto::class, 'index'])
     ->name('site.cadastroproduto');
+
+Route::middleware('autenticacao')
+    ->get( '/cadastrofornecedor',[CadastroFornecedor::class, 'index'])
+    ->name('site.cadastrofornecedor');
 
 Route::middleware('autenticacao')
     ->get( '/cadastroobra',[CadastroObra::class, 'index'])
